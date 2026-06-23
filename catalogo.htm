@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo | Guided by Noises</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="fundo-site">
+
+    <div class="ruido-overlay" aria-hidden="true"></div>
+
+    <div class="barra-anuncio text-center py-2 text-uppercase fw-bold small alert alert-dismissible fade show border-0 m-0 rounded-0" role="alert">
+        <span>Seja guiado pelo ruído analógico. Edições limitadas disponíveis.</span>
+        <button type="button" class="btn-close btn-close-white position-absolute end-0 top-50 translate-middle-y me-3" data-bs-dismiss="alert" aria-label="Close" style="font-size: 0.75rem;"></button>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-menu sticky-top borda-menu">
+        <div class="container">
+            <a class="navbar-brand fw-bold tracking-wide" href="home.htm">
+                GUIDED BY <span class="destaque-cor">NOISES</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-uppercase fw-semibold rotas-menu">
+                    <li class="nav-item"><a class="nav-link" href="home.htm">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="catalogo.htm">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.htm">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.htm">Contato</a></li>
+                </ul>
+                <div class="text-secondary">
+                    <i class="fas fa-compact-disc fs-5 animacao-rodar"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CABEÇALHO DA PÁGINA -->
+    <div class="catalogo-hero d-flex align-items-center">
+        <div class="container px-4">
+            <span class="text-uppercase tracking-widest small destaque-cor fw-bold">Acervo Inteiro
+                <span class="eq-barras" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+            </span>
+            <h1 class="fw-black text-uppercase my-2 text-white">Catálogo</h1>
+            <p class="max-largura-p text-creme-mutado m-0">Todo o garimpo de Slacker Rock e Lo-Fi disponível na loja, sem recorte.</p>
+        </div>
+    </div>
+
+    <!-- VITRINE COMPLETA COM CARROSSEIS POR ARTISTA -->
+    <main class="container my-5 py-4">
+
+        <!-- ================= SEÇÃO: GUIDED BY VOICES ================= -->
+        <section class="mb-5">
+            <div class="mb-4 d-flex justify-content-between align-items-end">
+                <div>
+                    <span class="destaque-cor text-uppercase small tracking-wider fw-bold">Discografia</span>
+                    <h2 class="fw-black text-uppercase text-white m-0">Guided by Voices</h2>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-sm me-2 rounded-circle" type="button" data-bs-target="#carouselGBV" data-bs-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-light btn-sm rounded-circle" type="button" data-bs-target="#carouselGBV" data-bs-slide="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="carouselGBV" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+                    <!-- Bloco 1 -->
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-start">
+                            <!-- Disco 1 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Bee Thousand.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided by Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Bee Thousand (LP)</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 95,00</p>
+                                            <a href="produtos/gbv/bee-thousand.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 2 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Alien Lanes.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Alien Lanes</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 129,00</p>
+                                            <a href="produtos/gbv/alienlanes.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 3 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Devil Between My Toes.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Devil Between My Toes</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 99,00</p>
+                                            <a href="produtos/gbv/devilbetween.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 4 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/King Shit And The Golden Boys.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">King Shit And The Golden Boys</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 109,00</p>
+                                            <a href="produtos/gbv/kingshit.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 5 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Propeller.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Propeller</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 119,00</p>
+                                            <a href="produtos/gbv/propeller.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 2 -->
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-start">
+                            <!-- Disco 6 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Same Place The Fly Got Smashed.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Same Place The Fly Got Smashed</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 89,00</p>
+                                            <a href="produtos/gbv/sameplace.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 7 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Sandbox.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Sandbox</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 129,00</p>
+                                            <a href="produtos/gbv/sandbox.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 8 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Self-Inflicted Aerial Nostalgia.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Self-Inflicted Aerial Nostalgia</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 119,00</p>
+                                            <a href="produtos/gbv/selfinflicted.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 9 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Tonics and Twisted Chasers.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Tonics and Twisted Chasers</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 75,00</p>
+                                            <a href="produtos/gbv/tonicsandtwisted.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 10 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Under The Bushes Under The Stars.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Under The Bushes Under The Stars</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 79,00</p>
+                                            <a href="produtos/gbv/underthebushes.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 3 -->
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-start">
+                            <!-- Disco 11 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/gbv/Vampire On Titus.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Guided By Voices</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Vampire On Titus</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 159,00</p>
+                                            <a href="produtos/gbv/vampireontitus.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SEÇÃO: ALEX G ================= -->
+        <section class="mb-5">
+            <div class="mb-4 d-flex justify-content-between align-items-end">
+                <div>
+                    <span class="destaque-cor text-uppercase small tracking-wider fw-bold">Discografia</span>
+                    <h2 class="fw-black text-uppercase text-white m-0">Alex G</h2>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-sm me-2 rounded-circle" type="button" data-bs-target="#carouselAlexG" data-bs-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-light btn-sm rounded-circle" type="button" data-bs-target="#carouselAlexG" data-bs-slide="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="carouselAlexG" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-start">
+                            <!-- Disco 1 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/alexg/DSU.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Alex G</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">DSU</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 69,00</p>
+                                            <a href="produtos/alexg/dsu.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 2 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/alexg/Race.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Alex G</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Race</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 99,00</p>
+                                            <a href="produtos/alexg/race.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 3 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/alexg/Trick.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Alex G</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Trick</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 149,00</p>
+                                            <a href="produtos/alexg/trick.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SEÇÃO: DINOSAUR JR ================= -->
+        <section class="mb-5">
+            <div class="mb-4 d-flex justify-content-between align-items-end">
+                <div>
+                    <span class="destaque-cor text-uppercase small tracking-wider fw-bold">Discografia</span>
+                    <h2 class="fw-black text-uppercase text-white m-0">Dinosaur Jr</h2>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-sm me-2 rounded-circle" type="button" data-bs-target="#carouselDinosaur" data-bs-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-light btn-sm rounded-circle" type="button" data-bs-target="#carouselDinosaur" data-bs-slide="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="carouselDinosaur" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-start">
+                            <!-- Disco 1 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/dinosaurjr/Beyond.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Dinosaur Jr</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Beyond</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 79,00</p>
+                                            <a href="produtos/dinosaurjr/beyond.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 2 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/dinosaurjr/Bug.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Dinosaur Jr</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Bug</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 89,00</p>
+                                            <a href="produtos/dinosaurjr/bug.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 3 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/dinosaurjr/Dinosaur.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Dinosaur Jr</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">Dinosaur</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 109,00</p>
+                                            <a href="produtos/dinosaurjr/dinosaur.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Disco 4 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/dinosaurjr/You're Living All Over Me.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Dinosaur Jr</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">You're Living All Over Me</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 139,00</p>
+                                            <a href="produtos/dinosaurjr/youreliving.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SEÇÃO: PETERC2 ================= -->
+        <section class="mb-5">
+            <div class="mb-4 d-flex justify-content-between align-items-end">
+                <div>
+                    <span class="destaque-cor text-uppercase small tracking-wider fw-bold">Discografia</span>
+                    <h2 class="fw-black text-uppercase text-white m-0">Peterc2</h2>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-sm me-2 rounded-circle" type="button" data-bs-target="#carouselPeter" data-bs-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="btn btn-outline-light btn-sm rounded-circle" type="button" data-bs-target="#carouselPeter" data-bs-slide="next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="carouselPeter" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-start">
+                            <!-- Disco 1 -->
+                            <div class="col-6 col-md-4 col-lg-2-4">
+                                <div class="card-disco h-100 p-3 rounded d-flex flex-column justify-content-between">
+                                    <div class="wrapper-capa position-relative overflow-hidden rounded">
+                                        <span class="tag-status position-absolute bg-vermelho">Último</span>
+                                        <img src="imagens/peterc2/The Ocean Trench.jpg" class="w-100 img-capa" alt="Capa LP">
+                                    </div>
+                                    <div class="mt-3 d-flex flex-column flex-grow-1 justify-content-between">
+                                        <div>
+                                            <span class="artista text-uppercase small d-block">Peterc2</span>
+                                            <h3 class="fs-7 fw-bold text-white mb-1">The Ocean Trench</h3>
+                                        </div>
+                                        <div>
+                                            <p class="m-0 preco-cor fw-bold small mt-2">R$ 49,00</p>
+                                            <a href="produtos/peterc2/theoceantrench.htm" class="btn-ver-disco mt-3 w-100 d-block text-center text-uppercase text-decoration-none fw-bold py-2 rounded">Ver Detalhes</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-menu text-center py-4 small border-top border-dark text-secondary">
+        <p class="m-0">&copy; 2026 Guided by Noises</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

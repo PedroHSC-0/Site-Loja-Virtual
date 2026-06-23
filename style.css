@@ -1,0 +1,398 @@
+/* ==========================================================================
+   GUIDED BY NOISES — IDENTIDADE "FITA & RUÍDO"
+   Paleta herdada da capa de Bee Thousand (Guided by Voices), reforçada com
+   o vocabulário do próprio nome da loja: chiado de fita, selo de catálogo,
+   capa colada com fita adesiva. O "ruído" deixa de ser só um conceito no
+   texto da barra de anúncio e passa a existir visualmente na tela inteira.
+   ========================================================================== */
+
+:root {
+    --tinta: #0d1517;              /* Fundo principal — quase preto, base azulada */
+    --bloco: #16242b;              /* Fundo dos cards/blocos */
+
+    --linha: #223742;              /* Bordas finas */
+    --papel: #efe6c7;              /* Texto principal, cor de papel/creme */
+    --papel-fraco: rgba(239, 230, 199, 0.68);
+    --fita-azul: #4aa3da;          /* Azul da faixa do álbum — cor de assinatura */
+    --selo-vermelho: #d0bfbc;      /* Carimbo raro/esgotado */
+    --mostarda: #e8b32e;           /* Detalhe secundário, foco de acessibilidade */
+    --fita-marrom: #6b4a30;        /* Acento de fita cassete */
+    --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --fonte-display: 'Anton', 'Arial Narrow', sans-serif;   /* títulos, cartaz de show */
+    --fonte-corpo: 'Space Mono', 'Courier New', monospace;  /* texto corrido, contador de fita */
+    --fonte-selo: 'Special Elite', 'Courier New', monospace; /* carimbos, etiquetas, eyebrows */
+}
+
+/* Estrutura Geral */
+.fundo-site {
+    background-color: var(--tinta);
+    color: var(--papel);
+    font-family: var(--fonte-corpo);
+    position: relative;
+}
+
+.bg-menu { background-color: #08100f !important; }
+.borda-menu { border-bottom: 1px solid var(--linha); }
+.destaque-cor {
+    color: var(--fita-azul) !important;
+    font-family: var(--fonte-selo);
+}
+.text-creme-mutado { color: var(--papel-fraco); }
+
+/* Utilitários de tracking */
+.tracking-wide { letter-spacing: 0.05em; }
+.tracking-wider { letter-spacing: 0.12em; }
+.tracking-widest { letter-spacing: 0.22em; }
+
+/* ==========================================================================
+   ASSINATURA: CHIADO ANALÓGICO
+   ========================================================================== */
+.ruido-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 180px 180px;
+    animation: chiado 1s steps(5) infinite;
+}
+@keyframes chiado {
+    0%   { background-position: 0 0; }
+    100% { background-position: 180px 90px; }
+}
+
+/* Barra superior */
+.barra-anuncio {
+    background-color: var(--fita-azul);
+    color: var(--tinta);
+    border-bottom: 2px solid var(--selo-vermelho);
+    font-family: var(--fonte-selo);
+    letter-spacing: 0.1em;
+}
+
+/* Marca no menu */
+.navbar-brand {
+    font-family: var(--fonte-display);
+    letter-spacing: 0.04em;
+    font-size: 1.45rem;
+}
+
+/* Links do menu */
+.rotas-menu .nav-link {
+    color: rgba(239, 230, 199, 0.6) !important;
+    font-family: var(--fonte-corpo);
+    position: relative;
+    transition: var(--transicao);
+}
+.rotas-menu .nav-link:hover,
+.rotas-menu .nav-link.active {
+    color: var(--fita-azul) !important;
+}
+.rotas-menu .nav-link.active::after,
+.rotas-menu .nav-link:hover::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    bottom: -6px;
+    height: 3px;
+    background-image: repeating-linear-gradient(90deg, var(--fita-azul) 0 4px, transparent 4px 8px);
+}
+
+/* Equalizador decorativo */
+.eq-barras {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.eq-barras span {
+    width: 3px;
+    background: currentColor;
+    animation: eq 0.9s ease-in-out infinite;
+    transform-origin: bottom;
+}
+.eq-barras span:nth-child(1) { height: 40%; animation-delay: 0s; }
+.eq-barras span:nth-child(2) { height: 100%; animation-delay: 0.15s; }
+.eq-barras span:nth-child(3) { height: 65%; animation-delay: 0.3s; }
+.eq-barras span:nth-child(4) { height: 85%; animation-delay: 0.45s; }
+@keyframes eq {
+    0%, 100% { transform: scaleY(0.35); }
+    50%      { transform: scaleY(1); }
+}
+
+/* Slideshow / Carrossel */
+.banner-hero {
+    height: 480px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--linha);
+}
+.max-largura-p { max-width: 550px; }
+.fw-black {
+    font-family: var(--fonte-display);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* Cabeçalho de páginas internas */
+.catalogo-hero {
+    min-height: 220px;
+    background-color: var(--bloco);
+    border-bottom: 1px solid var(--linha);
+    padding: 4rem 0 2.5rem;
+}
+
+/* ==========================================================================
+   CARDS DE DISCO
+   ========================================================================== */
+.card-disco {
+    background-color: var(--bloco);
+    border: 1px solid var(--linha);
+    transition: var(--transicao);
+    height: 390px !important;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-disco:hover {
+    z-index: 10 !important;
+    transform: translateY(-5px);
+    border-color: var(--fita-azul);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   CARROSSEL — CORREÇÃO DO OVERFLOW
+   clip-path libera o hover no eixo Y mas corta os slides nas laterais,
+   evitando que os outros slides apareçam antes da transição.
+   ========================================================================== */
+.carousel-inner {
+    overflow: visible;
+}
+
+.carousel-item {
+    padding-right: 12px;
+}
+
+.carousel {
+    clip-path: inset(-20px 0px -20px 0px);
+}
+
+.wrapper-capa { position: relative; }
+
+.img-capa {
+    transition: var(--transicao);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.card-disco:hover .img-capa { transform: scale(1.03); }
+
+/* Selos de status */
+.tag-status {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    background-color: rgba(13, 21, 23, 0.6);
+    border: 1.5px dashed var(--fita-azul);
+    color: var(--fita-azul);
+    font-family: var(--fonte-selo);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    padding: 3px 9px;
+    border-radius: 0;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+    z-index: 3;
+}
+.tag-status.bg-vermelho {
+    background-color: rgba(13, 21, 23, 0.6) !important;
+    border-color: var(--selo-vermelho);
+    color: var(--selo-vermelho);
+}
+
+/* Código de catálogo */
+.codigo-catalogo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-family: var(--fonte-corpo);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--papel-fraco);
+    background: rgba(13, 21, 23, 0.6);
+    padding: 2px 7px;
+    z-index: 3;
+}
+
+.artista { color: var(--mostarda); font-weight: bold; font-family: var(--fonte-selo); letter-spacing: 0.04em; }
+.preco-cor { color: var(--papel); font-size: 1.1rem; font-family: var(--fonte-corpo); }
+
+/* Botões */
+.btn-ver-disco {
+    background-color: transparent;
+    color: var(--papel);
+    border: 1px solid var(--linha);
+    font-family: var(--fonte-corpo);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    transition: var(--transicao);
+}
+.btn-ver-disco::before {
+    content: "▸ ";
+    color: var(--fita-azul);
+    transition: var(--transicao);
+}
+.card-disco:hover .btn-ver-disco {
+    background-color: var(--fita-azul);
+    color: var(--tinta);
+    border-color: var(--fita-azul);
+}
+.card-disco:hover .btn-ver-disco::before { color: var(--tinta); }
+
+/* Botão do Catálogo Completo */
+.btn-catalogo-completo {
+    background-color: transparent;
+    color: var(--fita-azul);
+    border: 2px solid var(--fita-azul);
+    font-family: var(--fonte-corpo);
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    transition: var(--transicao);
+    box-shadow: 0 4px 15px rgba(74, 163, 218, 0.1);
+}
+.btn-catalogo-completo:hover {
+    background-color: var(--fita-azul);
+    color: var(--tinta);
+    transform: scale(1.03);
+    box-shadow: 0 4px 20px rgba(74, 163, 218, 0.3);
+}
+
+/* Animação do Vinil Girando */
+.animacao-rodar {
+    animation: rodarDisco 4s linear infinite;
+    display: inline-block;
+    color: var(--fita-azul);
+}
+@keyframes rodarDisco {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Grid de 5 colunas customizada */
+@media (min-width: 992px) {
+    .col-lg-2-4 {
+        flex: 0 0 auto;
+        width: 20% !important;
+    }
+}
+.fs-7 { font-size: 0.85rem !important; }
+
+@media (max-width: 768px) {
+    .banner-hero { height: 350px; }
+    .banner-hero h1 { font-size: 2rem; }
+    .btn-ver-disco {
+        background-color: var(--fita-azul);
+        color: var(--tinta);
+    }
+}
+
+/* Rodapé */
+footer p { font-family: var(--fonte-selo); letter-spacing: 0.06em; }
+
+/* Página Sobre */
+.image-sobre {
+    max-height: 450px;
+    object-fit: cover;
+    border: 1px solid var(--linha);
+    transition: var(--transicao);
+}
+.image-sobre:hover { transform: scale(1.02); }
+
+.leading-relaxed { line-height: 1.7; }
+
+.translate-middle-z {
+    border-color: var(--selo-vermelho) !important;
+    transform: translate(15px, 15px);
+    z-index: -1;
+}
+
+/* Inputs do Formulário de Contato */
+.input-customizado {
+    background-color: var(--tinta) !important;
+    border: 1px solid var(--linha) !important;
+    font-family: var(--fonte-corpo);
+}
+.input-customizado:focus {
+    border-color: var(--fita-azul) !important;
+    box-shadow: 0 0 8px rgba(74, 163, 218, 0.25) !important;
+}
+.input-customizado::placeholder { color: rgba(239, 230, 199, 0.4) !important; }
+
+.form-select.input-customizado {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23efe6c7' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Botão de Envio de Contato */
+.btn-enviar-contato {
+    background-color: transparent;
+    color: var(--fita-azul);
+    border: 2px solid var(--fita-azul);
+    font-family: var(--fonte-corpo);
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+.btn-enviar-contato:hover {
+    background-color: var(--fita-azul);
+    color: var(--tinta);
+}
+
+/* Links e ícones de redes sociais */
+.hover-azul { transition: var(--transicao); }
+.hover-azul:hover { color: var(--fita-azul) !important; }
+
+/* Acessibilidade */
+a:focus-visible,
+button:focus-visible,
+.btn-ver-disco:focus-visible,
+.btn-catalogo-completo:focus-visible,
+.btn-enviar-contato:focus-visible {
+    outline: 2px dashed var(--mostarda);
+    outline-offset: 3px;
+}
+
+.placeholder-capa {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background: linear-gradient(135deg, var(--bloco), var(--tinta));
+    color: var(--fita-azul);
+    font-size: 2.2rem;
+    border: 1px dashed var(--linha);
+}
+
+/* Respeita preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    .ruido-overlay,
+    .animacao-rodar,
+    .eq-barras span,
+    .card-disco,
+    .card-disco:hover,
+    .img-capa,
+    .card-disco:hover .img-capa {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}
