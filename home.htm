@@ -16,12 +16,7 @@
 
     <div class="ruido-overlay" aria-hidden="true"></div>
 
-    <div class="barra-anuncio text-center py-2 text-uppercase fw-bold small alert alert-dismissible fade show border-0 m-0 rounded-0" role="alert">
-        <span>Seja guiado pelo ruído analógico. Edições limitadas disponíveis.</span>
-        <button type="button" class="btn-close btn-close-white position-absolute end-0 top-50 translate-middle-y me-3" data-bs-dismiss="alert" aria-label="Close" style="font-size: 0.75rem;"></button>
-    </div>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-menu sticky-top borda-menu">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-menu borda-menu" id="navbar-principal">
         <div class="container">
             <a class="navbar-brand fw-bold tracking-wide" href="home.htm">
                 GUIDED BY <span class="destaque-cor">NOISES</span>
@@ -31,7 +26,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto text-uppercase fw-semibold rotas-menu">
-                    <li class="nav-item"><a class="nav-link" href="home.htm">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home.htm">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="catalogo.htm">Catálogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="sobre.htm">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="contato.htm">Contato</a></li>
@@ -43,7 +38,28 @@
         </div>
     </nav>
 
-    <!-- CARROSSEL -->
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-toggle" id="toggleBtn" aria-label="Alternar menu">
+            <i class="fas fa-chevron-right" id="toggleIcon"></i>
+        </button>
+    
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">Parceiros</div>
+            <a class="sidebar-item" href="https://www.sandyalexg.com" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Alex G
+            </a>
+            <a class="sidebar-item" href="https://www.guidedbyvoices.com" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Guided by Voices
+            </a>
+            <a class="sidebar-item" href="https://www.dinosaurjr.com" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Dinosaur Jr
+            </a>
+            <a class="sidebar-item" href="https://pigpenfan.netlify.app" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Peterc2
+            </a>
+        </nav>
+    </div>
+
     <div id="carouselNoises" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <!-- Slide 1 -->
@@ -201,9 +217,8 @@
                 </div>
             </div>
 
-        </div> <!-- Fim da Row de produtos -->
+        </div>
 
-        <!-- Seção Isolada do Botão (Fora do Grid de Produtos) -->
         <div class="text-center mt-5 pt-3">
             <a href="catalogo.htm" class="btn-catalogo-completo text-uppercase fw-bold text-decoration-none d-inline-block py-3 px-5 rounded">
                 Ver Catálogo Completo <i class="fas fa-arrow-right ms-2"></i>
@@ -216,5 +231,45 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const toggleIcon = document.getElementById('toggleIcon');
+        const carousel = document.getElementById('carouselNoises');
+        const navbar = document.querySelector('.navbar');
+
+        function ajustarSidebar() {
+            const navbarRect = navbar.getBoundingClientRect();
+            const navbarBottom = navbarRect.bottom;
+
+            if (navbarBottom <= 0) {
+                sidebar.style.top = '0px';
+                sidebar.style.height = '100vh';
+                sidebar.style.paddingTop = '0px';
+            } else {
+                sidebar.style.top = '0px';
+                sidebar.style.height = '100vh';
+                sidebar.style.paddingTop = navbarBottom + 'px';
+            }
+        }
+
+        ajustarSidebar();
+        window.addEventListener('scroll', ajustarSidebar, { passive: true });
+
+        let aberta = false;
+
+        toggleBtn.addEventListener('click', function () {
+            aberta = !aberta;
+            sidebar.classList.toggle('aberta', aberta);
+            toggleIcon.className = aberta ? 'fas fa-chevron-left' : 'fas fa-chevron-right';
+
+            const margem = aberta ? '260px' : '40px';
+            if (carousel) carousel.style.marginLeft = margem;
+        });
+    });
+    </script>
+    
 </body>
 </html>

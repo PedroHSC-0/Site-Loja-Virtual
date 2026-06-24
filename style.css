@@ -71,6 +71,11 @@
     border-bottom: 2px solid var(--selo-vermelho);
     font-family: var(--fonte-selo);
     letter-spacing: 0.1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001; /* acima da navbar */
 }
 
 /* Marca no menu */
@@ -78,6 +83,18 @@
     font-family: var(--fonte-display);
     letter-spacing: 0.04em;
     font-size: 1.45rem;
+}
+
+#navbar-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+body.fundo-site {
+    padding-top: 56px; /* empurra o conteúdo para não ficar atrás da navbar */
 }
 
 /* Links do menu */
@@ -176,8 +193,10 @@
    evitando que os outros slides apareçam antes da transição.
    ========================================================================== */
 .carousel-inner {
-    overflow: visible;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
+
 
 .carousel-item {
     padding-right: 12px;
@@ -382,6 +401,73 @@ button:focus-visible,
     border: 1px dashed var(--linha);
 }
 
+.card-alto {
+    height: auto !important;
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    height: calc(100vh - 56px);
+    width: 260px;
+    background: #08100f;
+    border-right: 1px solid var(--linha);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-220px);
+    transition: var(--transicao);
+    z-index: 999;
+}
+.sidebar.aberta { transform: translateX(0); }
+
+.sidebar-section {
+    padding: 20px 24px 4px 20px;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 50%; right: -18px;
+    transform: translateY(-50%);
+    width: 18px; height: 48px;
+    background: var(--bloco);
+    border: 1px solid var(--linha);
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    color: var(--fita-azul);
+    font-size: 10px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 18px;
+    color: var(--papel-fraco);
+    font-size: 0.8rem;
+    border-left: 3px solid transparent;
+    transition: var(--transicao);
+    text-decoration: none;
+    white-space: nowrap;
+}
+.sidebar-item:hover,
+.sidebar-item.ativo {
+    color: var(--fita-azul);
+    border-left-color: var(--fita-azul);
+    background: rgba(74,163,218,0.08);
+}
+
+body.fundo-site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 /* Respeita preferência por menos movimento */
 @media (prefers-reduced-motion: reduce) {
     .ruido-overlay,
@@ -394,5 +480,12 @@ button:focus-visible,
         animation: none !important;
         transition: none !important;
         transform: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner .row > [class*="col-"] {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 }
